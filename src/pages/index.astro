@@ -1,26 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Carousel from "../components/Carousel.astro";
+
+const year = new Date().getFullYear();
 ---
 
 <Layout>
   <header class="hero">
-    <div class="container">
-      <h1>Harborage Marina Lease Extension Referendum</h1>
-      <p class="eyebrow">St. Petersburg Citywide Referendum | November 3, 2026</p>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>Harborage Marina Lease Extension Referendum</h1>
+        <p class="eyebrow">St. Petersburg Citywide Referendum | November 3, 2026</p>
 
-      <h3>What voters are deciding</h3>
-      <p>
-        St. Petersburg voters will decide whether City Council may approve an
-        amendment to the lease of City-owned submerged lands at Harborage
-        Marina.
-      </p>
-      <p>
-        The proposed amendment would establish a new 30-year lease term and
-        require Harborage Marina to construct 200 linear feet of docks, boat
-        lifts, and expanded restrooms at no cost to the City. The required
-        improvements would become City property at the end of the lease.
-      </p>
-      <a class="btn" href="#ballot">Read the Official Ballot Language</a>
+        <h3>What voters are deciding</h3>
+        <p>
+          St. Petersburg voters will decide whether City Council may approve an
+          amendment to the lease of City-owned submerged lands at Harborage
+          Marina.
+        </p>
+        <p>
+          The proposed amendment would establish a new 30-year lease term and
+          require Harborage Marina to construct 200 linear feet of docks, boat
+          lifts, and expanded restrooms at no cost to the City. The required
+          improvements would become City property at the end of the lease.
+        </p>
+        <a class="btn" href="#ballot">Read the Official Ballot Language</a>
+      </div>
+
+      <aside class="hero-cta">
+        <h2>Ballot Question 2</h2>
+        <p class="hero-cta-lead">Vote</p>
+        <span class="ballot-option"><span class="check" aria-hidden="true">✓</span>YES</span>
+        <ul class="hero-cta-points">
+          <li>No cost to taxpayers</li>
+          <li>Good for St. Pete</li>
+          <li>Good for the future</li>
+        </ul>
+      </aside>
     </div>
   </header>
 
@@ -84,6 +100,10 @@ import Layout from "../layouts/Layout.astro";
 
   <hr />
 
+  <Carousel />
+
+  <hr />
+
   <section>
     <div class="container">
       <h2>Harborage Marina and the City</h2>
@@ -129,8 +149,8 @@ import Layout from "../layouts/Layout.astro";
           the lease.
         </p>
         <div class="ballot-options">
-          <span class="ballot-option">YES</span>
-          <span class="ballot-option">NO</span>
+          <span class="ballot-option"><span class="check" aria-hidden="true">✓</span>YES</span>
+          <span class="ballot-option ballot-option--no">NO</span>
         </div>
       </div>
       <p class="note" style="margin-top:1rem;">
@@ -181,9 +201,7 @@ import Layout from "../layouts/Layout.astro";
     <div class="container">
       <p><a href="https://harboragereferendum2026.com">harboragereferendum2026.com</a></p>
       <p>Contact: <a href="mailto:info@harboragereferendum2026.com">info@harboragereferendum2026.com</a></p>
-      <p class="note">
-        [Required political advertisement disclaimer, if applicable]
-      </p>
+      <p class="note">&copy; {year} Harborage Referendum 2026. All rights reserved.</p>
     </div>
   </footer>
 </Layout>
