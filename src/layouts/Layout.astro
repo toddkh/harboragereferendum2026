@@ -7,9 +7,13 @@ interface Props {
 }
 
 const {
-  title = "Harborage Marina Lease Extension Referendum",
-  description = "Information on the St. Petersburg citywide referendum on the Harborage Marina lease extension, on the ballot November 3, 2026.",
+  title = "Harborage Marina Lease Extension Referendum | St. Petersburg",
+  description = "Learn about the proposed amendment establishing a new 30-year Harborage Marina lease term, approximately $2.15 million in planned marina improvements, and the November 3, 2026 St. Petersburg referendum.",
 } = Astro.props;
+
+const socialHeadline = "Harborage Marina Lease Extension Referendum";
+const socialDescription =
+  "St. Petersburg voters will decide whether City Council may approve a new 30-year lease term requiring 200 linear feet of docks, boat lifts, and expanded restrooms at no cost to the City.";
 ---
 
 <!doctype html>
@@ -19,9 +23,12 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={socialHeadline} />
+    <meta property="og:description" content={socialDescription} />
     <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={socialHeadline} />
+    <meta name="twitter:description" content={socialDescription} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>

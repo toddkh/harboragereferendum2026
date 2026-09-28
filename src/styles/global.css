@@ -100,6 +100,32 @@ header.hero {
   margin-bottom: 1.5rem;
 }
 
+.hero-sub {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 1.5rem;
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--highlight);
+  border: 2px solid var(--highlight);
+  padding: 12px 24px;
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background-color: var(--highlight);
+  color: var(--bg);
+  filter: none;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -160,6 +186,11 @@ header.hero {
     position: sticky;
     top: 40px;
   }
+
+  /* Match the quick-facts width to the hero container */
+  .quick-facts .container {
+    max-width: 1120px;
+  }
 }
 
 section {
@@ -170,6 +201,48 @@ hr {
   border: 0;
   border-top: 1px solid var(--rule);
   margin: 0;
+}
+
+/* Quick facts bar */
+.quick-facts {
+  background-color: var(--highlight);
+  color: var(--bg);
+}
+
+.quick-facts .container {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.quick-facts ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+
+.quick-facts li {
+  display: flex;
+  align-items: center;
+}
+
+.quick-facts li:not(:last-child)::after {
+  content: "|";
+  margin-left: 20px;
+  opacity: 0.5;
+}
+
+/* Voting lead */
+.voting-lead {
+  color: var(--highlight);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 0;
 }
 
 /* Buttons */

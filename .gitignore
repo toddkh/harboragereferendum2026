@@ -27,6 +27,3 @@ pnpm-debug.log*
 
 # Kiro
 .kiro/
-
-# Source presentation (not for publishing)
-public/Harborage Marina Presentation PSI 4-9-26.pdf
