@@ -25,7 +25,7 @@ const year = new Date().getFullYear();
           >
             Explore the Proposal
           </a>
-          <a class="btn btn--secondary" href="#ballot">Read the Ballot Language</a>
+          <a class="btn btn--secondary" href="#ballot" data-open-ballot>Read the Ballot Language</a>
         </div>
       </div>
 
@@ -129,7 +129,7 @@ const year = new Date().getFullYear();
 
   <section id="ballot">
     <div class="container">
-      <details class="accordion">
+      <details class="accordion" id="ballot-details">
         <summary>
           <span class="accordion-title">Official Ballot Language</span>
           <span class="accordion-icon" aria-hidden="true"></span>
@@ -270,4 +270,32 @@ const year = new Date().getFullYear();
       <p class="note">&copy; {year} Harborage Referendum 2026. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    function openBallot() {
+      const details = document.getElementById(
+        "ballot-details"
+      ) as HTMLDetailsElement | null;
+      if (details) details.open = true;
+    }
+
+    // Expand when the "Read the Ballot Language" button is clicked.
+    document
+      .querySelectorAll<HTMLElement>("[data-open-ballot]")
+      .forEach((el) =>
+        el.addEventListener("click", () => {
+          openBallot();
+          // Let the accordion expand before the browser jumps to it.
+          const target = document.getElementById("ballot");
+          if (target) {
+            requestAnimationFrame(() =>
+              target.scrollIntoView({ behavior: "smooth" })
+            );
+          }
+        })
+      );
+
+    // Also expand if the page is loaded/navigated directly to #ballot.
+    if (window.location.hash === "#ballot") openBallot();
+  </script>
 </Layout>
